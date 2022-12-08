@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mohammed.cars.R
 import com.mohammed.cars.model.Cars
+import android.widget.Toast
+
 
 
 class CarsAdapter(private val context: Context, private val dataset: List<Cars>) :
@@ -29,6 +32,11 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
         holder.year.text = item.year.toString()
         holder.fuel.text = item.fuel.toString()
         holder.passengers.text = item.Passenger.toString()
+        holder.card.setOnClickListener{
+            onCardClick()
+
+        }
+
 
 
     }
@@ -38,14 +46,20 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
 
     class ViewHolder(private val View: View) : RecyclerView.ViewHolder(View) {
 
+
         val carImage: ImageView = View.findViewById(R.id.imageView)
         val carName: TextView = View.findViewById(R.id.textView)
         val year: TextView = View.findViewById(R.id.year)
         val fuel: TextView = View.findViewById(R.id.fuel)
         val passengers: TextView = View.findViewById(R.id.Passengers)
 
+        val card :CardView =View.findViewById(R.id.card)
+
 
     }
-
+    fun onCardClick(){
+        val toast = Toast.makeText(context,"you clicked the card",Toast.LENGTH_SHORT)
+        toast.show()
+    }
 
 }

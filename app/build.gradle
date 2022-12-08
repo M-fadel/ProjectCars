@@ -43,4 +43,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     //recycleView
     implementation "androidx.recyclerview:recyclerview:1.2.1"
+    //like button
+//    compile 'com.github.jd-alexander:LikeButton:0.2.3'
 }
