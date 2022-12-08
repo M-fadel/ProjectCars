@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Cars</string>
-    <string name="hello">Hello</string>
+    <string name="car1">qweqwe</string>
+    <string name="car2">ABCD</string>
+    <string name="car3">AAA</string>
+    <string name="car4">weqe</string>
+    <string name="car5">RRRR</string>
 
 </resources>

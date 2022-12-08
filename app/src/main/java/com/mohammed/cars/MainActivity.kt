@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dataset = DataSource().books()
+        val dataset = DataSource().cars()
 
         val recyclerView = findViewById<RecyclerView>(R.id.coffee)
 
