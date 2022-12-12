@@ -1,9 +1,11 @@
 package com.mohammed.cars.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -11,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mohammed.cars.R
 import com.mohammed.cars.model.Cars
 import android.widget.Toast
-
+import com.mohammed.cars.CarDetailsActivity
 
 
 class CarsAdapter(private val context: Context, private val dataset: List<Cars>) :
@@ -32,8 +34,18 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
         holder.year.text = item.year.toString()
         holder.fuel.text = item.fuel.toString()
         holder.passengers.text = item.Passenger.toString()
+        val context =holder.itemView.context
         holder.card.setOnClickListener{
+
+            val intent = Intent(context,CarDetailsActivity::class.java)
+            .putExtra("name",holder.carName.text.toString()).putExtra("img",item.carImage)
+            context.startActivity(intent)
+//        carDetailsActivity()
+            //project context to access the activity
+//        holder.like.isChecked
+
             onCardClick()
+            //project create intent
 
         }
 
@@ -52,14 +64,17 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
         val year: TextView = View.findViewById(R.id.year)
         val fuel: TextView = View.findViewById(R.id.fuel)
         val passengers: TextView = View.findViewById(R.id.Passengers)
-
+        val like :CheckBox = View.findViewById(R.id.Like)
         val card :CardView =View.findViewById(R.id.card)
 
 
     }
     fun onCardClick(){
-        val toast = Toast.makeText(context,"you clicked the card",Toast.LENGTH_SHORT)
-        toast.show()
+//        val toast = Toast.makeText(context,"you clicked a card",Toast.LENGTH_SHORT)
+//        toast.show()
+
+
+//        val intent =
     }
 
 }

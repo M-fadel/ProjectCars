@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Cars</string>
-    <string name="car1">qweqwe</string>
-    <string name="car2">ABCD</string>
-    <string name="car3">AAA</string>
-    <string name="car4">weqe</string>
-    <string name="car5">RRRR</string>
+    <string name="car1">acura NSX</string>
+    <string name="car2">porsche taycan</string>
+    <string name="car3">Ford Mustang</string>
+    <string name="car4">GR86</string>
+    <string name="car5">Ford GT</string>
+    <string name="car6">BMW i4 M50</string>
+    <string name="car7">Bugatti Chiron</string>
+
+
 
 </resources>
