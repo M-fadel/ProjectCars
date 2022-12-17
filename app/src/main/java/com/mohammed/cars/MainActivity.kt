@@ -2,30 +2,25 @@ package com.mohammed.cars
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.mohammed.cars.adapter.CarsAdapter
-import com.mohammed.cars.data.DataSource
+import com.mohammed.cars.databinding.ActivityMainBinding
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.NavController
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
 
-        val dataset = DataSource().cars()
-
-        val recyclerView = findViewById<RecyclerView>(R.id.coffee)
-
-        val adapter = CarsAdapter(this, dataset)
-
-        recyclerView.adapter = adapter
-
-        recyclerView.setHasFixedSize(true)
-        val layoutManager = GridLayoutManager(this, 2)
-        recyclerView.layoutManager = layoutManager
-
-//        val onCardClick :cardView
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 }

@@ -2,27 +2,30 @@ package com.mohammed.cars.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.accessibility.AccessibilityNodeInfo
+import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mohammed.cars.R
 import com.mohammed.cars.model.Cars
-import android.widget.Toast
-import com.mohammed.cars.CarDetailsActivity
+import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
+import com.mohammed.cars.CarsFragmentDirections
 
 
 class CarsAdapter(private val context: Context, private val dataset: List<Cars>) :
     RecyclerView.Adapter<CarsAdapter.ViewHolder>() {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val itemLayout =
             LayoutInflater.from(parent.context).inflate(R.layout.item_vehichle, parent, false)
+        itemLayout.accessibilityDelegate = Accessibility
         return ViewHolder(itemLayout)
     }
 
@@ -36,16 +39,15 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
         holder.passengers.text = item.Passenger.toString()
         val context =holder.itemView.context
         holder.card.setOnClickListener{
-
-            val intent = Intent(context,CarDetailsActivity::class.java)
-            .putExtra("name",holder.carName.text.toString()).putExtra("img",item.carImage)
-            context.startActivity(intent)
+            val action = CarsFragmentDirections.actionCarsFragmentToCarDetails(name = holder.carName.text.toString(),item.carImage)
+            holder.view.findNavController().navigate(action)
+//            val intent = Intent(context,CarDetailsActivity::class.java)
+//            .putExtra("name",holder.carName.text.toString()).putExtra("img",item.carImage)
+//            context.startActivity(intent)
 //        carDetailsActivity()
             //project context to access the activity
 //        holder.like.isChecked
-
-            onCardClick()
-            //project create intent
+        //project create intent
 
         }
 
@@ -56,25 +58,39 @@ class CarsAdapter(private val context: Context, private val dataset: List<Cars>)
     override fun getItemCount() = dataset.size
 
 
-    class ViewHolder(private val View: View) : RecyclerView.ViewHolder(View) {
+    class ViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
 
 
-        val carImage: ImageView = View.findViewById(R.id.imageView)
-        val carName: TextView = View.findViewById(R.id.textView)
-        val year: TextView = View.findViewById(R.id.year)
-        val fuel: TextView = View.findViewById(R.id.fuel)
-        val passengers: TextView = View.findViewById(R.id.Passengers)
-        val like :CheckBox = View.findViewById(R.id.Like)
-        val card :CardView =View.findViewById(R.id.card)
+        val carImage: ImageView = view.findViewById(R.id.imageView)
+        val carName: TextView = view.findViewById(R.id.textView)
+        val year: TextView = view.findViewById(R.id.year)
+        val fuel: TextView = view.findViewById(R.id.fuel)
+        val passengers: TextView = view.findViewById(R.id.Passengers)
+//        val like :CheckBox = view.findViewById(R.id.Like)
+        val card :CardView =view.findViewById(R.id.card)
 
 
     }
-    fun onCardClick(){
-//        val toast = Toast.makeText(context,"you clicked a card",Toast.LENGTH_SHORT)
-//        toast.show()
 
-
-//        val intent =
+    companion object Accessibility : View.AccessibilityDelegate() {
+        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+        override fun onInitializeAccessibilityNodeInfo(
+            host: View,
+            info: AccessibilityNodeInfo
+        ) {
+            super.onInitializeAccessibilityNodeInfo(host, info)
+            // With `null` as the second argument to [AccessibilityAction], the
+            // accessibility service announces "double tap to activate".
+            // If a custom string is provided,
+            // it announces "double tap to <custom string>".
+            val customString = host.context?.getString(R.string.carDeatails)
+            val customClick =
+                AccessibilityNodeInfo.AccessibilityAction(
+                    AccessibilityNodeInfo.ACTION_CLICK,
+                    customString
+                )
+            info.addAction(customClick)
+        }
     }
 
 }
