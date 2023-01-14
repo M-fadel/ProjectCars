@@ -6,10 +6,10 @@
     <data>
         <variable
             name="Vehicle"
-            type="com.mohammed.cars.domain.DevByteVehicles" />
+            type="com.mohammed.cars.network.models.NetworkVehicle" />
         <variable
             name="clickListener"
-            type="com.mohammed.cars.ui.home.VehicleClick" />
+            type="com.mohammed.cars.ui.home.VehicleListener" />
     </data>
 
 <androidx.cardview.widget.CardView

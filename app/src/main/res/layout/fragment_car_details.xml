@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.mohammed.cars.domain.DevByteVehicles" />
+            type="com.mohammed.cars.network.models.NetworkVehicle" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,7 +50,7 @@
             android:id="@+id/rent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{}"
+            android:text=""
             tools:text="Rent | Day"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageView2"
@@ -200,7 +200,22 @@
                         android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/Color"/>
-
+                    <TextView
+                        android:id="@+id/YearValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.year}"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ColorValue"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="1dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintTop_toBottomOf="@id/Year"
+                        app:layout_constraintStart_toStartOf="@+id/Color"
+                        app:layout_constraintEnd_toEndOf="@+id/ColorValue"/>
                     <TextView
                         android:id="@+id/fuel"
                         android:layout_width="wrap_content"
@@ -209,8 +224,23 @@
                         android:textColor="@color/black"
                         app:layout_constraintTop_toBottomOf="@id/Year"
                         app:layout_constraintStart_toStartOf="parent"/>
+                    <TextView
+                        android:id="@+id/fuelValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.fuel}"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/Year"
+                        app:layout_constraintEnd_toEndOf="parent"/>
 
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="1dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintTop_toBottomOf="@id/fuel"
+                        app:layout_constraintStart_toStartOf="@+id/Color"
+                        app:layout_constraintEnd_toEndOf="@+id/ColorValue"/>
                     <TextView
                         android:id="@+id/door"
                         android:layout_width="wrap_content"
@@ -219,6 +249,15 @@
                         android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/fuel"/>
+                    <TextView
+                        android:id="@+id/doorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.doors}"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fuel"/>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>

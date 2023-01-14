@@ -34,38 +34,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
-                    android:id="@+id/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="-30dp"
-                    android:background="@color/purple_200"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4">
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:textSize="15sp"
-                        android:layout_marginEnd="5dp"
-                        android:background="@color/white"
-                        android:hint="Select Type"/>
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="5dp"
-                        android:background="@color/white"
-                        android:hint="Start date"/>
-
-                    <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="5dp"
-                        android:background="@color/white"
-                        android:hint="End date"/>
-
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/newAddedText"
@@ -76,7 +44,7 @@
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/search_bar"/>
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4"/>
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -87,9 +55,10 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    tools:listData="@{viewModel.cars}"
                     app:layout_constraintTop_toBottomOf="@+id/newAddedText"
                     app:layout_goneMarginTop="20dp"
-                    tools:listitem="@layout/item_vehichle"/>
+                    />
 
 <!--                <TextView-->
 <!--                    android:layout_marginTop="20dp"-->
@@ -114,14 +83,14 @@
 <!--                    tools:listitem="@layout/item_vehichle"-->
 <!--                    app:layout_goneMarginTop="20dp" />-->
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="186dp"
-                    android:text="Search"
-                    app:layout_constraintStart_toEndOf="@+id/search_bar"
-                    app:layout_constraintTop_toTopOf="parent"/>
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:layout_marginTop="186dp"-->
+<!--                    android:text="Search"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/search_bar"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"/>-->
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

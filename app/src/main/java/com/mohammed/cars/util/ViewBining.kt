@@ -6,9 +6,11 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mohammed.cars.domain.DevByteVehicles
+import com.mohammed.cars.network.models.NetworkVehicle
 //import com.mohammed.cars.ui.home.VehiclesListAdapter
 
 import com.mohammed.cars.ui.home.VehiclesListAdapter
+import com.mohammed.cars.ui.vehicles.CarsApiStatus
 
 
 @BindingAdapter("imageUrl")
@@ -31,7 +33,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 //    }
 //}
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<DevByteVehicles>?) {
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<NetworkVehicle>?) {
 
 
     val adapter = recyclerView.adapter as VehiclesListAdapter
@@ -45,22 +47,22 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<DevByteVehicles>?) {
  * hides the image view.
  */
 
-//@BindingAdapter("apiStatus")
-//fun bindStatus(statusImageView: ImageView, status: CarsApiStatus?) {
-//    when(status) {
-//        CarsApiStatus.LOADING -> {
-//            statusImageView.visibility = View.VISIBLE
-////            statusImageView.setImageResource(R.drawable.loading_animation)
-//        }
-//        CarsApiStatus.DONE -> {
-//            statusImageView.visibility = View.GONE
-//        }
-//        CarsApiStatus.ERROR -> {
-//            statusImageView.visibility = View.VISIBLE
-////            statusImageView.setImageResource()
-//        }
-//        else -> {
-//            print("===========================================================================")
-//        }
-//    }
-//}
+@BindingAdapter("apiStatus")
+fun bindStatus(statusImageView: ImageView, status: CarsApiStatus?) {
+    when(status) {
+        CarsApiStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+        CarsApiStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }
+        CarsApiStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_broken_image)
+        }
+        else -> {
+            print("===========================================================================")
+        }
+    }
+}

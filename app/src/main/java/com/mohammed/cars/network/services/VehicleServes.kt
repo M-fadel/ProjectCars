@@ -2,7 +2,7 @@ package com.mohammed.cars.network.services
 
 
 import com.mohammed.cars.network.models.NetworkVehicle
-import com.mohammed.cars.network.models.NetworkVehiclesContainer
+//import com.mohammed.cars.network.models.NetworkVehiclesContainer
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -31,13 +31,9 @@ object CarsAPI {
     val retrofitService: CarsAPIService by lazy { retrofit.create(CarsAPIService::class.java) }
 }
 
-//private val retrofit = Retrofit.Builder()
-//    .addConverterFactory(ScalarsConverterFactory.create()).baseUrl(BASE_URL)
-//    .build()
-
 interface CarsAPIService {
     @GET("getall/cars")
-    suspend fun vehicle(): NetworkVehiclesContainer
+    suspend fun vehicle(): List<NetworkVehicle>
     @GET("get/newlyAdded")
     suspend fun newlyAdded():List<NetworkVehicle>
 }

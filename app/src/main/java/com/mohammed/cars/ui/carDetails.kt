@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.wordsapp.constants.Constants
 import com.mohammed.cars.databinding.FragmentCarDetailsBinding
 import com.mohammed.cars.domain.DevByteVehicles
+import com.mohammed.cars.network.models.NetworkVehicle
 import com.mohammed.cars.ui.vehicles.VehiclesViewModel
 
 
@@ -39,7 +40,9 @@ class carDetails : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentCarDetailsBinding.inflate(inflater)
-//        binding.lifecycleOwner = this
+        binding.lifecycleOwner = this
+        binding.viewModel= viewModel.vehicle.value
+        binding.rent.text = "${viewModel.vehicle.value?.Price.toString()}|Day"
 //        binding.viewModel = DevByteVehicles[]
         return binding.root
     }

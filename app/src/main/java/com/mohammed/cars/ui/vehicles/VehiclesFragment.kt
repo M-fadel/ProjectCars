@@ -11,6 +11,10 @@ import androidx.navigation.fragment.findNavController
 import com.mohammed.cars.R
 import com.mohammed.cars.databinding.FragmentVehiclesBinding
 import com.mohammed.cars.domain.DevByteVehicles
+//import com.mohammed.cars.ui.home.VehicleClick
+import com.mohammed.cars.ui.home.VehicleListener
+import com.mohammed.cars.ui.home.VehiclesListAdapter
+
 //import com.mohammed.cars.ui.home.VehicleListener
 //import com.mohammed.cars.ui.home.VehiclesListAdapter
 
@@ -25,14 +29,14 @@ class VehiclesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentVehiclesBinding.inflate(inflater, container, false)
-        viewModel.vehicleslist
+        viewModel.getVehicleList()
         binding. lifecycleOwner = this
-//        binding.viewModel = viewModel
-//        binding.vehiclesView.adapter = VehiclesListAdapter(VehicleListener { vehicle ->
-//            viewModel.onVehicleClicked(vehicle)
-//            findNavController()
-//                .navigate(R.id.action_vehiclesFragment_to_carDetails)
-//        })
+        binding.viewModel = viewModel
+        binding.vehiclesView.adapter = VehiclesListAdapter(VehicleListener { NetworkVehicle ->
+            viewModel.onVehicleClicked(NetworkVehicle)
+            findNavController()
+                .navigate(R.id.action_vehiclesFragment_to_carDetails)
+        })
 
 
         return binding.root
