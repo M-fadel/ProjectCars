@@ -7,18 +7,26 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mohammed.cars.databinding.ItemVehichleBinding
 import com.mohammed.cars.domain.DevByteVehicles
-import com.mohammed.cars.network.models.Vehicle
 
-class VehiclesListAdapter(val clickListener: VehicleListener) :
-    ListAdapter<DevByteVehicles, VehiclesListAdapter.HomeViewHolder>(DiffCallback) {
+class VehiclesListAdapter(val clickListener: VehicleClick) : ListAdapter<DevByteVehicles, VehiclesListAdapter.HomeViewHolder>(DiffCallback) {
+
+//    var videos: List<DevByteAdapter> = emptyList()
+//        set(value) {
+//            field = value
+//            // For an extra challenge, update this to use the paging library.
+//
+//            // Notify any registered observers that the data set has changed. This will cause every
+//            // element in our RecyclerView to be invalidated.
+//            notifyDataSetChanged()
+//        }
 
     class HomeViewHolder(
         var binding: ItemVehichleBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: VehicleListener, DevByteVehicles: DevByteVehicles) {
-//            binding.vehicle= DevByteVehicles
-//            binding.imageView
-//            binding.clickListener = clickListener
+        fun bind(clickListener: VehicleClick, DevByteVehicles: DevByteVehicles) {
+            binding.vehicle= DevByteVehicles
+            binding.imageView
+            binding.clickListener = clickListener
             binding.executePendingBindings()
 
         }
@@ -54,8 +62,6 @@ class VehiclesListAdapter(val clickListener: VehicleListener) :
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.binding.also {
-            it.clickListener =clickListener
-            it.vehicle =vehicle[position]
         }
         val vehicle = getItem(position)
         holder.bind(clickListener, vehicle)

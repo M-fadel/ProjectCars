@@ -9,7 +9,7 @@
             type="com.mohammed.cars.domain.DevByteVehicles" />
         <variable
             name="clickListener"
-            type="com.mohammed.cars.ui.home.VehicleListener" />
+            type="com.mohammed.cars.ui.home.VehicleClick" />
     </data>
 
 <androidx.cardview.widget.CardView

@@ -3,7 +3,6 @@ package com.mohammed.cars.database
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.mohammed.cars.domain.DevByteVehicles
-import com.mohammed.cars.network.models.Vehicle
 
 
 @Entity

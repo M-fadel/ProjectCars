@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.mohammed.cars.R
 import com.mohammed.cars.databinding.FragmentVehiclesBinding
 import com.mohammed.cars.domain.DevByteVehicles
-import com.mohammed.cars.ui.home.VehicleListener
-import com.mohammed.cars.ui.home.VehiclesListAdapter
+//import com.mohammed.cars.ui.home.VehicleListener
+//import com.mohammed.cars.ui.home.VehiclesListAdapter
 
 
 class VehiclesFragment : Fragment() {

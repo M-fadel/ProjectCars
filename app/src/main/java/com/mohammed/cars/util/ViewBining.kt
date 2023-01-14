@@ -2,15 +2,13 @@ package com.mohammed.cars
 
 import android.view.View
 import android.widget.ImageView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.mohammed.cars.network.models.Vehicle
-import com.mohammed.cars.ui.vehicles.CarsApiStatus
-import com.mohammed.cars.ui.home.VehiclesListAdapter
 import com.bumptech.glide.Glide
 import com.mohammed.cars.domain.DevByteVehicles
+//import com.mohammed.cars.ui.home.VehiclesListAdapter
+
+import com.mohammed.cars.ui.home.VehiclesListAdapter
 
 
 @BindingAdapter("imageUrl")
@@ -24,16 +22,18 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
 //    }
 }
-@BindingAdapter("isNetworkError", "playlist")
-fun hideIfNetworkError(view: View, isNetWorkError: Boolean, playlist: Any?) {
-    view.visibility = if (playlist != null) View.GONE else View.VISIBLE
-
-    if(isNetWorkError) {
-        view.visibility = View.GONE
-    }
-}
+//@BindingAdapter("isNetworkError", "playlist")
+//fun hideIfNetworkError(view: View, isNetWorkError: Boolean, playlist: Any?) {
+//    view.visibility = if (playlist != null) View.GONE else View.VISIBLE
+//
+//    if(isNetWorkError) {
+//        view.visibility = View.GONE
+//    }
+//}
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<DevByteVehicles>?) {
+
+
     val adapter = recyclerView.adapter as VehiclesListAdapter
     adapter.submitList(data)
 }
@@ -45,22 +45,22 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<DevByteVehicles>?) {
  * hides the image view.
  */
 
-@BindingAdapter("apiStatus")
-fun bindStatus(statusImageView: ImageView, status: CarsApiStatus?) {
-    when(status) {
-        CarsApiStatus.LOADING -> {
-            statusImageView.visibility = View.VISIBLE
-//            statusImageView.setImageResource(R.drawable.loading_animation)
-        }
-        CarsApiStatus.DONE -> {
-            statusImageView.visibility = View.GONE
-        }
-        CarsApiStatus.ERROR -> {
-            statusImageView.visibility = View.VISIBLE
-//            statusImageView.setImageResource()
-        }
-        else -> {
-            print("===========================================================================")
-        }
-    }
-}
+//@BindingAdapter("apiStatus")
+//fun bindStatus(statusImageView: ImageView, status: CarsApiStatus?) {
+//    when(status) {
+//        CarsApiStatus.LOADING -> {
+//            statusImageView.visibility = View.VISIBLE
+////            statusImageView.setImageResource(R.drawable.loading_animation)
+//        }
+//        CarsApiStatus.DONE -> {
+//            statusImageView.visibility = View.GONE
+//        }
+//        CarsApiStatus.ERROR -> {
+//            statusImageView.visibility = View.VISIBLE
+////            statusImageView.setImageResource()
+//        }
+//        else -> {
+//            print("===========================================================================")
+//        }
+//    }
+//}

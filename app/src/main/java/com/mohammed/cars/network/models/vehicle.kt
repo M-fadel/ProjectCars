@@ -10,10 +10,10 @@ import com.squareup.moshi.JsonClass
 
 
 @JsonClass(generateAdapter = true)
-data class VehiclesContainer(val Cars: List<Vehicle>)
+data class NetworkVehiclesContainer(val Cars: List<NetworkVehicle>)
 
 @JsonClass(generateAdapter = true)
-data class Vehicle(
+data class NetworkVehicle(
 
 
     @Json(name = "_id") val id: String
@@ -36,7 +36,7 @@ data class Vehicle(
     val __v: Int
 )
 
-fun VehiclesContainer.asDomainModel(): List<DevByteVehicles> {
+fun NetworkVehiclesContainer.asDomainModel(): List<DevByteVehicles> {
     return Cars.map {
         DevByteVehicles(
             id = it.id,
@@ -59,7 +59,7 @@ fun VehiclesContainer.asDomainModel(): List<DevByteVehicles> {
         )
     }
 }
-    fun VehiclesContainer.asDatabaseModel(): List<DatabaseVehicle> {
+    fun NetworkVehiclesContainer.asDatabaseModel(): List<DatabaseVehicle> {
         return Cars.map {
             DatabaseVehicle(
                 id = it.id,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".VehiclesFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mohammed.cars.">
     <data>
         <variable
             name="viewModel"
@@ -27,21 +27,13 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <ProgressBar
-            android:id="@+id/loading_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:isNetworkError = "@{safeUnbox(viewModel.eventNetworkError)}"
-            app:playlist = "@{viewModel.vehicleslist}"
-            android:layout_gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/vehiclesView"
-            app:layout_constraintStart_toStartOf="parent"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vehiclesView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
+            tools:listData="@{viewModel.vehicleslist}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vehicle_banner"
             />

@@ -21,8 +21,7 @@ import com.squareup.moshi.Json
         val Passenger: String,
         val Price: Int,
         val Type: String,
-        val Year: String,
-                            ) {
+        val Year: String) {
 
         /**
          * Short description is used for displaying truncated descriptions in the UI

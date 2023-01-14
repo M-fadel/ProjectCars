@@ -24,6 +24,7 @@
                 android:layout_height="match_parent">
 
 
+
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="wrap_content"
@@ -77,14 +78,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/search_bar"/>
 
-                <ProgressBar
-                    android:id="@+id/loading_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:isNetworkError = "@{safeUnbox(viewModel.eventNetworkError)}"
-                    app:playlist = "@{viewModel.vehicleslist}"
-                    android:layout_gravity="center"
-                    />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/newAddedView"
                     android:layout_width="wrap_content"

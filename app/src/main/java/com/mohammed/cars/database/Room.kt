@@ -7,8 +7,9 @@ import androidx.room.*
 
 @Dao
 interface VehicleDao{
-    @Query("select * from DatabaseVehicle")
+    @Query("select * from databaseVehicle")
     fun getVehicles():LiveData<List<DatabaseVehicle>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(Vehicles:List<DatabaseVehicle>)
 }

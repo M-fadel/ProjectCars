@@ -4,7 +4,7 @@
 //import androidx.lifecycle.MutableLiveData
 //import androidx.lifecycle.ViewModel
 //import androidx.lifecycle.viewModelScope
-//import com.mohammed.cars.network.models.Vehicle
+//import com.mohammed.cars.network.models.NetworkVehicle
 //import com.mohammed.cars.network.services.CarsAPI
 //import kotlinx.coroutines.launch
 //
@@ -14,11 +14,11 @@
 //    private val _status = MutableLiveData<CarsApiStatus>()
 //    val status: LiveData<CarsApiStatus> = _status
 //
-//    private val _vehicles  = MutableLiveData<List<Vehicle>>()
-//    val cars: LiveData<List<Vehicle>> = _vehicles
+//    private val _vehicles  = MutableLiveData<List<NetworkVehicle>>()
+//    val cars: LiveData<List<NetworkVehicle>> = _vehicles
 //
-//    private val _vehicle  = MutableLiveData<Vehicle>()
-//    val vehicle : LiveData <Vehicle> = _vehicle
+//    private val _vehicle  = MutableLiveData<NetworkVehicle>()
+//    val vehicle : LiveData <NetworkVehicle> = _vehicle
 //    fun getVehicleList() {
 //        viewModelScope.launch {
 //
@@ -33,7 +33,7 @@
 //            }
 //        }
 //    }
-//    fun onVehicleClicked(vehicle: Vehicle) {
+//    fun onVehicleClicked(vehicle: NetworkVehicle) {
 //        _vehicle.value= vehicle
 //    }
 //

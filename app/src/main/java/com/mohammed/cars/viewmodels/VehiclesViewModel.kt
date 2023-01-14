@@ -1,16 +1,14 @@
 package com.mohammed.cars.ui.vehicles
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.mohammed.cars.database.getDatabase
-import com.mohammed.cars.domain.DevByteVehicles
-import com.mohammed.cars.network.models.Vehicle
-import com.mohammed.cars.network.services.CarsAPI
 import com.mohammed.cars.repository.VehiclesRepo
 import kotlinx.coroutines.launch
 import java.io.IOException
 
-enum class CarsApiStatus {LOADING, ERROR, DONE}
+//enum class CarsApiStatus {LOADING, ERROR, DONE}
 
 class VehiclesViewModel(application: Application) :AndroidViewModel(application){
 //==================================================================================================
@@ -18,22 +16,21 @@ class VehiclesViewModel(application: Application) :AndroidViewModel(application)
     private val _vehicleRepo = VehiclesRepo(getDatabase(application))
     val vehicleRepo get() = _vehicleRepo
 
-    private var _eventNetworkError = MutableLiveData<Boolean>(false)
-    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
-    val isNetworkErrorShown: LiveData<Boolean>
-        get() = _isNetworkErrorShown
-
-    val eventNetworkError: LiveData<Boolean>
-        get() = _eventNetworkError
-    //change this
     val vehicleslist = _vehicleRepo.vehicles
 
+    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    val eventNetworkError: LiveData<Boolean> get() = _eventNetworkError
 
+    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+    val isNetworkErrorShown: LiveData<Boolean> get() = _isNetworkErrorShown
+
+
+    //change this
 //==================================================================================================
 //    private val _status = MutableLiveData<CarsApiStatus>()
 //    val status: LiveData<CarsApiStatus> = _status
-//    private val _vehicles  = MutableLiveData<List<Vehicle>>()
-//    val cars: LiveData<List<Vehicle>> = _vehicles
+//    private val _vehicles  = MutableLiveData<List<NetworkVehicle>>()
+//    val cars: LiveData<List<NetworkVehicle>> = _vehicles
 //
 //    private val _vehicle  = MutableLiveData<DevByteVehicles>()
 //    val vehicle : LiveData <DevByteVehicles> = _vehicle
@@ -47,7 +44,9 @@ class VehiclesViewModel(application: Application) :AndroidViewModel(application)
 
     private fun refreshDataFromRepository() = viewModelScope.launch {
         try{
-            _vehicleRepo.refreshVideos()
+            _vehicleRepo.insertVehicles()
+            Log.d("dev","ViewModel")
+            Log.d("dev",_vehicleRepo.vehicles.value.toString())
             _eventNetworkError.value = false
             _isNetworkErrorShown.value = false
         }catch (networkError: IOException){

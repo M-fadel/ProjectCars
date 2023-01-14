@@ -1,8 +1,8 @@
 package com.mohammed.cars.network.services
 
 
-import com.mohammed.cars.network.models.Vehicle
-import com.mohammed.cars.network.models.VehiclesContainer
+import com.mohammed.cars.network.models.NetworkVehicle
+import com.mohammed.cars.network.models.NetworkVehiclesContainer
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -37,7 +37,7 @@ object CarsAPI {
 
 interface CarsAPIService {
     @GET("getall/cars")
-    suspend fun vehicle(): VehiclesContainer
+    suspend fun vehicle(): NetworkVehiclesContainer
     @GET("get/newlyAdded")
-    suspend fun newlyAdded():List<Vehicle>
+    suspend fun newlyAdded():List<NetworkVehicle>
 }

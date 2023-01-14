@@ -1,8 +1,8 @@
 package com.mohammed.cars.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.mohammed.cars.database.DatabaseVehicle
 import com.mohammed.cars.database.VehicleDatabase
 import com.mohammed.cars.database.asDomainModel
 import com.mohammed.cars.domain.DevByteVehicles
@@ -15,17 +15,16 @@ class VehiclesRepo(private val database: VehicleDatabase) {
 
 
     val vehicles: LiveData<List<DevByteVehicles>> = Transformations.map(database.VehicleDao.getVehicles()) {
+
         it.asDomainModel()
     }
 
     // to load and refresh data from API
-    suspend fun refreshVideos() {
-        withContext(Dispatchers.IO){
-            // result from api
-            val playlist = CarsAPI.retrofitService.vehicle()
-            // send result to room and covert to room model
-            // copy from data coming from server ( offline caching )
+    suspend fun insertVehicles() {
 
+        withContext(Dispatchers.IO){
+
+            val playlist = CarsAPI.retrofitService.vehicle()
             database.VehicleDao.insertAll(playlist.asDatabaseModel())
         }
     }
