@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBindings
 import com.mohammed.cars.R
@@ -25,6 +26,7 @@ import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
+
 
     private val viewModel: VehiclesViewModel by lazy {
         val activity = requireNotNull(this.activity) {
@@ -40,6 +42,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d("dev","====================beee============================")
         viewModel.vehicleslist.observe(viewLifecycleOwner){
+            viewModelAdapter?.vehicles = it
             Log.d("dev",it.toString())
         }
     }
@@ -60,7 +63,10 @@ class HomeFragment : Fragment() {
                     .navigate(R.id.action_homeFragment_to_carDetails)
             })
 
-
+        binding.root.findViewById<RecyclerView>(R.id.recycler_view).apply {
+//            layoutManager = LinearLayoutManager(context)
+            adapter = viewModelAdapter
+        }
 
 
 
@@ -140,11 +146,5 @@ class DevByteViewHolder(val viewDataBinding: ItemVehichleBinding) :
     companion object {
         @LayoutRes
         val LAYOUT = R.layout.item_vehichle
-        @JvmStatic
-        @BindingAdapter("journal")
-        fun RecyclerView.bindItems(journal: List<DevByteVehicles>) {
-            val adapter = adapter as DevByteAdapter
-            adapter.vehicles = journal
-        }
     }
 }
