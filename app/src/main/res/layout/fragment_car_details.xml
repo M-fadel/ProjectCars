@@ -5,16 +5,16 @@
     tools:context=".ui.carDetails"
     android:layout_margin="20dp">
 
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="viewModel"-->
-<!--            type="com.mohammed.cars.ui.vehicles.VehiclesViewModel" />-->
-<!--    </data>-->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mohammed.cars.domain.DevByteVehicles" />
+    </data>
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        >-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
@@ -24,59 +24,57 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/the_banner_of_this_page" />
-<!--        <ImageView-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/imageView4"-->
-<!--            android:id="@+id/imageView2"-->
-<!--            android:layout_width="170dp"-->
-<!--            android:layout_height="170dp"-->
-<!--            android:scaleType="fitXY"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:imageUrl="@{viewModel.vehicle.imgSrcUrl}"-->
-<!--            android:contentDescription="@string/this_should_be_the_vehicle_image" />-->
+        <ImageView
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/imageView4"
+            android:id="@+id/imageView2"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:imageUrl="@{viewModel.imge}"
+            android:contentDescription="@string/this_should_be_the_vehicle_image" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/car_name"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            tools:text="car name"-->
-<!--            android:text="@{viewModel.vehicle.model}"-->
-<!--            android:textColor="@color/black"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/imageView2"-->
-<!--            android:layout_marginEnd="50dp"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/rent"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@{}"-->
-<!--            tools:text="Rent | Day"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/imageView2"-->
-<!--            android:layout_marginStart="50dp">-->
-<!--        </TextView>-->
+        <TextView
+            android:id="@+id/car_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="car name"
+            android:text="@{viewModel.model}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            android:layout_marginEnd="50dp"/>
+        <TextView
+            android:id="@+id/rent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{}"
+            tools:text="Rent | Day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView2"
+            android:layout_marginStart="50dp">
+        </TextView>
 
-<!--        <View-->
-<!--            android:id="@+id/divider"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="1dp"-->
-<!--            android:background="?android:attr/listDivider"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/car_name"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/car_name"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/rent"/>-->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/car_name"
+            app:layout_constraintStart_toStartOf="@+id/car_name"
+            app:layout_constraintEnd_toEndOf="@+id/rent"/>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:cardCornerRadius="5dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/divider"-->
-<!--            android:padding="10dp"-->
-<!--            app:cardElevation="5dp"-->
-<!--            android:layout_margin="16dp">-->
-
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            android:padding="10dp"
+            app:cardElevation="5dp"
+            android:layout_margin="16dp">
 
 
 
@@ -86,142 +84,144 @@
 
 
 
-<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent">-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/car_details"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/car_details"-->
-<!--                        android:textColor="@color/Blue"-->
-<!--                        app:layout_constraintTop_toTopOf="parent"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-
-<!--                        />-->
 
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/car_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_details"
+                        android:textColor="@color/Blue"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/Type"-->
-<!--                        android:layout_width="114dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/type"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/car_details"/>-->
+                        />
 
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/TypeValue"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        tools:text="@{viewModel.vehicle.type}"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/car_details"-->
-<!--                        />-->
-<!--                    <View-->
-
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="1dp"-->
-<!--                        android:layout_margin="1dp"-->
-<!--                        android:background="?android:attr/listDivider"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Type"-->
-<!--                        app:layout_constraintStart_toStartOf="@+id/Type"-->
-<!--                        app:layout_constraintEnd_toEndOf="@+id/TypeValue"/>-->
+                    <TextView
+                        android:id="@+id/Type"
+                        android:layout_width="114dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/car_details"/>
 
 
 
+                    <TextView
+                        android:id="@+id/TypeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="@{viewModel.type}"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/car_details"
+                        />
+                    <View
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/Model"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/model"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Type">-->
-
-<!--                    </TextView>-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/ModelValue"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@{viewModel.vehicle.model}"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Type">-->
-
-<!--                    </TextView>-->
-
-<!--                    <View-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="1dp"-->
-<!--                        android:layout_margin="1dp"-->
-<!--                        android:background="?android:attr/listDivider"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Model"-->
-<!--                        app:layout_constraintStart_toStartOf="@+id/Model"-->
-<!--                        app:layout_constraintEnd_toEndOf="@+id/ModelValue"/>-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/Color"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/color"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Model"-->
-<!--                        />-->
-<!--                    <TextView-->
-<!--                        android:id="@+id/ColorValue"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@{viewModel.vehicle.color}"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Model"-->
-<!--                        />-->
-<!--                    <View-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="1dp"-->
-<!--                        android:layout_margin="1dp"-->
-<!--                        android:background="?android:attr/listDivider"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Color"-->
-<!--                        app:layout_constraintStart_toStartOf="@+id/Color"-->
-<!--                        app:layout_constraintEnd_toEndOf="@+id/ColorValue"/>-->
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="1dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintTop_toBottomOf="@id/Type"
+                        app:layout_constraintStart_toStartOf="@+id/Type"
+                        app:layout_constraintEnd_toEndOf="@+id/TypeValue"/>
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/Year"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/yaer"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Color"/>-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/fuel"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/fuel"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/Year"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"/>-->
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/door"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/doors"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@id/fuel"/>-->
-<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    <TextView
+                        android:id="@+id/Model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/model"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Type">
 
-<!--        </androidx.cardview.widget.CardView>-->
+                    </TextView>
+                    <TextView
+                        android:id="@+id/ModelValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.model}"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Type">
 
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+                    </TextView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="1dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintTop_toBottomOf="@id/Model"
+                        app:layout_constraintStart_toStartOf="@+id/Model"
+                        app:layout_constraintEnd_toEndOf="@+id/ModelValue"/>
+                    <TextView
+                        android:id="@+id/Color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/color"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Model"
+                        />
+                    <TextView
+                        android:id="@+id/ColorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.color}"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Model"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="1dp"
+                        android:background="?android:attr/listDivider"
+                        app:layout_constraintTop_toBottomOf="@id/Color"
+                        app:layout_constraintStart_toStartOf="@+id/Color"
+                        app:layout_constraintEnd_toEndOf="@+id/ColorValue"/>
+
+
+                    <TextView
+                        android:id="@+id/Year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yaer"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Color"/>
+
+                    <TextView
+                        android:id="@+id/fuel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fuel"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/Year"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+
+                    <TextView
+                        android:id="@+id/door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/doors"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fuel"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,5 +1,13 @@
-package com.mohammed.cars.viewmodels
-
+//package com.mohammed.cars.viewmodels
+//
+//import androidx.lifecycle.LiveData
+//import androidx.lifecycle.MutableLiveData
+//import androidx.lifecycle.ViewModel
+//import androidx.lifecycle.viewModelScope
+//import com.mohammed.cars.network.models.Vehicle
+//import com.mohammed.cars.network.services.CarsAPI
+//import kotlinx.coroutines.launch
+//
 //enum class CarsApiStatus {LOADING, ERROR, DONE}
 //
 //class HomeViewModel : ViewModel() {

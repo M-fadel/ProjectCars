@@ -14,7 +14,6 @@
         <action
             android:id="@+id/action_homeFragment_to_carDetails"
             app:destination="@id/carDetails" />
-        <argument android:name="Vehicle" />
 
     </fragment>
     <fragment
