@@ -1,16 +1,47 @@
 <resources>
-    <string name="app_name">Cars</string>
-    <string name="car1">acura NSX</string>
-    <string name="car2">porsche taycan</string>
-    <string name="car3">Ford Mustang</string>
-    <string name="car4">GR86</string>
-    <string name="car5">Ford GT</string>
-    <string name="car6">BMW i4 M50</string>
-    <string name="car7">Bugatti Chiron</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">carE_lounge</string>
+    <!--    <string name="car1">acura NSX</string>-->
+    <!--    <string name="car2">porsche taycan</string>-->
+    <!--    <string name="car3">Ford Mustang</string>-->
+    <!--    <string name="car4">GR86</string>-->
+    <!--    <string name="car5">Ford GT</string>-->
+    <!--    <string name="car6">BMW i4 M50</string>-->
+    <!--    <string name="car7">Bugatti Chiron</string>-->
     <string name="action_switch_layout">Switch Layout</string>
     <string name="carDeatails">Car Details</string>
+    <string name="loginEmail">example@example.com</string>
+    <string name="emailText">Email</string>
+    <string name="passText">Password</string>
+    <string name="passInput">**********</string>
+    <string name="loginButton">Login</string>
+    <string name="register">don\'t have an account?</string>
+    <string name="fnamText">First name</string>
+    <string name="fNameInput">ex: Nathan</string>
+    <string name="lNameText">Last Name</string>
+    <string name="lNameinput">ex: Bill</string>
+    <string name="confirmPText">Confirm Password</string>
+    <string name="Recommended">Recommendation for you</string>
+    <string name="car_details">Car Details:</string>
+    <string name="Home">Home</string>
+    <string name="nevgation_menu">nevgation_menu</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="cars">Cars</string>
+    <string name="all">All vehecles</string>
+    <string name="yacht">Yacht</string>
+    <string name="boats">Boats</string>
+    <string name="busse">Busse</string>
+    <string name="jet_ski">Jet Ski</string>
+    <string name="motor_cycle">Motor cycle</string>
+    <string name="nAdded">Newly added</string>
+    <string name="doors">Doors</string>
+    <string name="fuel">Fuel</string>
+    <string name="yaer">Yaer:</string>
+    <string name="color">Color</string>
+    <string name="model">Model</string>
+    <string name="make">Make</string>
+    <string name="this_should_be_the_vehicle_image">this should be the vehicle image</string>
+    <string name="the_banner_of_this_page">the banner of this page</string>
+    <string name="type">Type :</string>
 
 
 </resources>

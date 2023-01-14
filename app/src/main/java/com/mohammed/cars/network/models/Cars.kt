@@ -1,4 +1,4 @@
-package com.mohammed.cars.model
+package com.mohammed.cars.network.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
