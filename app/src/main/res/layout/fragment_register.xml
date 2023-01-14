@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+<!--    tools:context=".ui.RegisterFragment"-->
+    >
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_margin="16dp">-->
+
+
+<!--        &lt;!&ndash;    firstName, lastName, email, password, dateOfBirth&ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="124dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:src="@tools:sample/avatars" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/fNameText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="@string/fnamText"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageView3"></TextView>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/fName"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/fNameInput"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/fNameText"></EditText>-->
+
+<!--        <TextView-->
+<!--            android:layout_marginTop="10dp"-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/lNameText"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/fName"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:text="@string/lNameText">-->
+
+<!--        </TextView>-->
+<!--        <EditText-->
+<!--            android:id="@+id/lName"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/lNameinput"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/lNameText"></EditText>-->
+
+<!--        <TextView-->
+<!--           android:layout_marginTop="10dp"-->
+<!--           android:id="@+id/emailText"-->
+<!--           android:layout_width="wrap_content"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:text="@string/emailText"-->
+<!--           app:layout_constraintTop_toBottomOf="@+id/lName"-->
+<!--           app:layout_constraintStart_toStartOf="parent"></TextView>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/emailInput"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/loginEmail"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/emailText">-->
+
+<!--        </EditText>-->
+
+<!--        <TextView-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:id="@+id/passText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/passText"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/emailInput"-->
+<!--            app:layout_constraintStart_toStartOf="parent"></TextView>-->
+<!--        <EditText-->
+<!--            android:id="@+id/passwordInput"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="@string/passInput"-->
+<!--            android:inputType="textPassword"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/passText" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:id="@+id/confirmPass"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/confirmPText"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/passwordInput"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
+
+<!--        </TextView>-->
+<!--        <EditText-->
+<!--            android:id="@+id/confpassword"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="20"-->
+<!--            android:hint="@string/passInput"-->
+<!--            android:inputType="textPassword"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/confirmPass" />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</FrameLayout>

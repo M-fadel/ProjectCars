@@ -1,86 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:backgroundTint="@color/purple_200"
-    android:clickable="true"
-    android:padding="8dp"
-    app:cardElevation="8dp">
+    android:text="hello">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+</TextView>
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="Vehicle"-->
+<!--            type="com.mohammed.cars.domain.DevByteVehicles" />-->
+<!--&lt;!&ndash;        <variable&ndash;&gt;-->
+<!--&lt;!&ndash;            name="clickListener"&ndash;&gt;-->
+<!--&lt;!&ndash;            type="com.mohammed.cars.ui.home.VehicleClick" />&ndash;&gt;-->
+<!--    </data>-->
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:scaleType="centerInside"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+<!--&lt;!&ndash;<androidx.cardview.widget.CardView&ndash;&gt;-->
+<!--&lt;!&ndash;    android:id="@+id/card"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_margin="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:onClickListener="@{() -> clickListener.onClick(Vehicle)}"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:padding="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    app:cardCornerRadius="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    app:cardElevation="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    >&ndash;&gt;-->
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            tools:text="carName" />
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/cardView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <TextView
-            android:id="@+id/year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Year"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"></TextView>
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="170dp"-->
+<!--            android:layout_height="170dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:srcCompat="@tools:sample/avatars"-->
+<!--            app:imageUrl="@{Vehicle.imgSrcUrl}"/>-->
 
-        <TextView
-            android:id="@+id/fuel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fuel"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Passengers"
-            app:layout_constraintStart_toEndOf="@+id/year"
-            app:layout_constraintTop_toBottomOf="@+id/textView"></TextView>
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageView"-->
+<!--            tools:text="@{Vehicle.model}" />-->
 
-        <TextView
-            android:id="@+id/Passengers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"></TextView>
+<!--        <TextView-->
+<!--            android:id="@+id/year"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{Vehicle.year}"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/fuel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{Vehicle.fuel}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/Passengers"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/year"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/Passengers"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@{Vehicle.passenger}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView">-->
+
+<!--        </TextView>-->
 
 
 
+<!--        &lt;!&ndash;        <Button&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:id="@+id/button"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="60dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="35dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="Button"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintStart_toStartOf="parent" />&ndash;&gt;-->
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button"-->
-        <!--            android:layout_width="60dp"-->
-        <!--            android:layout_height="35dp"-->
-        <!--            android:text="Button"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+<!--        &lt;!&ndash;        <Button&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:id="@+id/button2"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="60dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="35dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="Button"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:layout_constraintEnd_toEndOf="parent" />&ndash;&gt;-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-        <!--        <Button-->
-        <!--            android:id="@+id/button2"-->
-        <!--            android:layout_width="60dp"-->
-        <!--            android:layout_height="35dp"-->
-        <!--            android:text="Button"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent" />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</com.google.android.material.card.MaterialCardView>
+<!--</androidx.cardview.widget.CardView>-->
+</layout>

@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/action_switch_layout"
-        android:title="@string/action_switch_layout"
-        android:icon="@drawable/ic_linear_layout"
-        app:showAsAction="always" />
+    <item android:id="@+id/menu"
+        android:title="@string/nevgation_menu"
+        android:icon="@drawable/ic_baseline_menu_24"
+        app:showAsAction="ifRoom" >
+        <menu>
+            <item
+                android:id="@+id/homeButton"
+                android:title="@string/Home"
+                android:icon="@drawable/ic_home"/>
+            <item
+                android:id="@+id/vehicle"
+                android:title="@string/vehicles"
+                android:icon="@drawable/carmenu">
+                <menu>
+                    <item
+                        android:id="@+id/all"
+                        android:title="@string/all"/>
+                    <item
+                        android:id="@+id/cars"
+                        android:title="@string/cars"/>
+                    <item
+                        android:id="@+id/yacht"
+                        android:title="@string/yacht"/>
+                    <item
+                            android:id="@+id/boats"
+                        android:title="@string/boats"/>
+                    <item
+                        android:id="@+id/busse"
+                        android:title="@string/busse"/>
+                    <item
+                        android:id="@+id/jet_ski"
+                        android:title="@string/jet_ski"/>
+                    <item
+                        android:id="@+id/motor_cycle"
+                        android:title="@string/motor_cycle"/>
+
+                </menu>
+            </item>
+        </menu>
+    </item>
+
 </menu>

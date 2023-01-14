@@ -4,27 +4,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/carsFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/carsFragment"
-        android:name="com.mohammed.cars.CarsFragment"
-        android:label="fragment_cars"
-        tools:layout="@layout/fragment_cars" >
+        android:id="@+id/homeFragment"
+        android:name="com.mohammed.cars.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_carsFragment_to_carDetails"
+            android:id="@+id/action_homeFragment_to_carDetails"
             app:destination="@id/carDetails" />
+        <argument android:name="Vehicle" />
+
     </fragment>
     <fragment
         android:id="@+id/carDetails"
-        android:name="com.mohammed.cars.carDetails"
+        android:name="com.mohammed.cars.ui.carDetails"
         android:label="fragment_car_details"
         tools:layout="@layout/fragment_car_details" >
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="img"
-            app:argType="integer" />
+<!--        <action-->
+<!--            android:id="@+id/action_carDetails_to_placeholder2"-->
+<!--            app:destination="@id/Rent" />-->
     </fragment>
+    <fragment
+        android:id="@+id/vehiclesFragment"
+        android:name="com.mohammed.cars.ui.vehicles.VehiclesFragment"
+        android:label="VehiclesFragment" >
+        <action
+            android:id="@+id/action_vehiclesFragment_to_carDetails"
+            app:destination="@id/carDetails" />
+    </fragment>
+    <!--    <fragment android:id="@+id/allvehicles" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_allvehicles_to_carDetails"-->
+<!--            app:destination="@id/carDetails" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/loginFragment2"-->
+<!--        android:name="com.mohammed.cars.ui.LoginFragment"-->
+<!--        android:label="fragment_login"-->
+<!--        tools:layout="@layout/fragment_login" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_loginFragment2_to_carDetails"-->
+<!--            app:destination="@id/carDetails" />-->
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/registerFragment"-->
+<!--        android:name="com.mohammed.cars.ui.RegisterFragment"-->
+<!--        android:label="fragment_register"-->
+<!--        tools:layout="@layout/fragment_register" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_registerFragment_to_loginFragment2"-->
+<!--            app:destination="@id/loginFragment2" />-->
+<!--    </fragment>-->
+<!--    <fragment android:id="@+id/Rent" />-->
 </navigation>
